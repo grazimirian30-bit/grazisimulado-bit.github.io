@@ -1,0 +1,251 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulado – Engenharia de Requisitos</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#eef2f7;
+    padding:20px;
+}
+
+.container{
+    max-width:950px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,0.12);
+}
+
+h1{
+    text-align:center;
+    color:#7c0a5b;
+}
+
+.questao{
+    margin-bottom:25px;
+    padding:15px;
+    background:#fafafa;
+    border-left:6px solid #7c0a5b;
+}
+
+button{
+    background:#7c0a5b;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5a0842;
+}
+
+#resultado{
+    margin-top:25px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.explicacao{
+    margin-top:8px;
+    font-size:14px;
+    color:#333;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Simulado – Engenharia de Requisitos (Nível Banca)</h1>
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<div class="questao">
+<p><b>1.</b> Em Engenharia de Requisitos, um requisito de software é:</p>
+
+<label><input type="radio" name="q1" value="a"> Um algoritmo implementado no sistema.</label><br>
+<label><input type="radio" name="q1" value="b"> Uma condição ou capacidade que o sistema deve possuir.</label><br>
+<label><input type="radio" name="q1" value="c"> Apenas documentação técnica do código.</label><br>
+<label><input type="radio" name="q1" value="d"> Um erro identificado durante testes.</label>
+
+<div class="explicacao" id="exp1"></div>
+</div>
+
+<!-- Q2 -->
+<div class="questao">
+<p><b>2.</b> Analise: </p>
+<p>I. Requisitos funcionais descrevem comportamentos do sistema.<br>
+II. Requisitos não funcionais tratam de propriedades como desempenho e confiabilidade.</p>
+
+<label><input type="radio" name="q2" value="a"> I e II verdadeiras.</label><br>
+<label><input type="radio" name="q2" value="b"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q2" value="c"> I falsa e II verdadeira.</label><br>
+<label><input type="radio" name="q2" value="d"> I e II falsas.</label>
+
+<div class="explicacao" id="exp2"></div>
+</div>
+
+<!-- Q3 -->
+<div class="questao">
+<p><b>3.</b> Requisitos do usuário caracterizam-se por:</p>
+
+<label><input type="radio" name="q3" value="a"> Serem escritos exclusivamente em linguagem formal matemática.</label><br>
+<label><input type="radio" name="q3" value="b"> Descreverem detalhes internos de implementação.</label><br>
+<label><input type="radio" name="q3" value="c"> Apresentarem visão de alto nível compreensível ao usuário.</label><br>
+<label><input type="radio" name="q3" value="d"> Substituírem a especificação do sistema.</label>
+
+<div class="explicacao" id="exp3"></div>
+</div>
+
+<!-- Q4 -->
+<div class="questao">
+<p><b>4.</b> Sobre o processo de Engenharia de Requisitos:</p>
+<p>I. É iterativo e envolve stakeholders.<br>
+II. Ocorre apenas após a fase de codificação.</p>
+
+<label><input type="radio" name="q4" value="a"> I e II verdadeiras.</label><br>
+<label><input type="radio" name="q4" value="b"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q4" value="c"> I falsa e II verdadeira.</label><br>
+<label><input type="radio" name="q4" value="d"> I e II falsas.</label>
+
+<div class="explicacao" id="exp4"></div>
+</div>
+
+<!-- Q5 -->
+<div class="questao">
+<p><b>5.</b> A atividade de levantamento de requisitos tem como objetivo principal:</p>
+
+<label><input type="radio" name="q5" value="a"> Implementar o banco de dados.</label><br>
+<label><input type="radio" name="q5" value="b"> Descobrir necessidades e restrições dos stakeholders.</label><br>
+<label><input type="radio" name="q5" value="c"> Executar testes de aceitação.</label><br>
+<label><input type="radio" name="q5" value="d"> Corrigir defeitos do software.</label>
+
+<div class="explicacao" id="exp5"></div>
+</div>
+
+<!-- Q6 -->
+<div class="questao">
+<p><b>6.</b> Um requisito verificável é aquele que:</p>
+
+<label><input type="radio" name="q6" value="a"> Não pode ser testado objetivamente.</label><br>
+<label><input type="radio" name="q6" value="b"> É descrito apenas de forma subjetiva.</label><br>
+<label><input type="radio" name="q6" value="c"> Pode ser comprovado por testes ou critérios mensuráveis.</label><br>
+<label><input type="radio" name="q6" value="d"> Depende exclusivamente da opinião do usuário.</label>
+
+<div class="explicacao" id="exp6"></div>
+</div>
+
+<!-- Q7 -->
+<div class="questao">
+<p><b>7.</b> Analise:</p>
+<p>I. A validação de requisitos busca identificar inconsistências.<br>
+II. A validação ocorre apenas após a entrega do sistema.</p>
+
+<label><input type="radio" name="q7" value="a"> I e II verdadeiras.</label><br>
+<label><input type="radio" name="q7" value="b"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q7" value="c"> I falsa e II verdadeira.</label><br>
+<label><input type="radio" name="q7" value="d"> I e II falsas.</label>
+
+<div class="explicacao" id="exp7"></div>
+</div>
+
+<!-- Q8 -->
+<div class="questao">
+<p><b>8.</b> Requisitos de domínio:</p>
+
+<label><input type="radio" name="q8" value="a"> São independentes da área de aplicação.</label><br>
+<label><input type="radio" name="q8" value="b"> Originam-se das características específicas do domínio.</label><br>
+<label><input type="radio" name="q8" value="c"> Tratam apenas de interface gráfica.</label><br>
+<label><input type="radio" name="q8" value="d"> Substituem requisitos funcionais.</label>
+
+<div class="explicacao" id="exp8"></div>
+</div>
+
+<!-- Q9 -->
+<div class="questao">
+<p><b>9.</b> No gerenciamento de requisitos, a rastreabilidade serve para:</p>
+
+<label><input type="radio" name="q9" value="a"> Eliminar a necessidade de documentação.</label><br>
+<label><input type="radio" name="q9" value="b"> Controlar versões de hardware.</label><br>
+<label><input type="radio" name="q9" value="c"> Manter ligações entre requisitos e avaliar impactos de mudanças.</label><br>
+<label><input type="radio" name="q9" value="d"> Automatizar a codificação.</label>
+
+<div class="explicacao" id="exp9"></div>
+</div>
+
+<!-- Q10 -->
+<div class="questao">
+<p><b>10.</b> Sobre a negociação de requisitos:</p>
+<p>I. Busca resolver conflitos entre stakeholders.<br>
+II. Pode levar à combinação ou eliminação de requisitos.</p>
+
+<label><input type="radio" name="q10" value="a"> I e II verdadeiras.</label><br>
+<label><input type="radio" name="q10" value="b"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q10" value="c"> I falsa e II verdadeira.</label><br>
+<label><input type="radio" name="q10" value="d"> I e II falsas.</label>
+
+<div class="explicacao" id="exp10"></div>
+</div>
+
+<button type="button" onclick="corrigir()">Finalizar Prova</button>
+</form>
+
+<div id="resultado"></div>
+</div>
+
+<script>
+const gabarito={
+ q1:"b",
+ q2:"a",
+ q3:"c",
+ q4:"b",
+ q5:"b",
+ q6:"c",
+ q7:"b",
+ q8:"b",
+ q9:"c",
+ q10:"a"
+};
+
+const explicacoes={
+ q1:"Requisito é condição ou capacidade que o sistema deve atender.",
+ q2:"Funcionais tratam comportamento; não funcionais tratam propriedades.",
+ q3:"Requisitos do usuário são de alto nível e compreensíveis.",
+ q4:"O processo é iterativo e ocorre antes da codificação.",
+ q5:"Levantamento descobre necessidades dos stakeholders.",
+ q6:"Requisito verificável deve ser testável.",
+ q7:"Validação busca inconsistências e ocorre antes da entrega.",
+ q8:"Requisitos de domínio vêm do domínio da aplicação.",
+ q9:"Rastreabilidade avalia impacto de mudanças.",
+ q10:"Negociação resolve conflitos e pode ajustar requisitos."
+};
+
+function corrigir(){
+ let pontos=0;
+
+ for(let q in gabarito){
+   const marcada=document.querySelector(`input[name="${q}"]:checked`);
+   if(marcada && marcada.value===gabarito[q]) pontos++;
+   document.getElementById("exp"+q.slice(1)).innerText="✔ "+explicacoes[q];
+ }
+
+ document.getElementById("resultado").innerText=
+   "Pontuação: "+pontos+" / 10";
+}
+</script>
+</body>
+</html>

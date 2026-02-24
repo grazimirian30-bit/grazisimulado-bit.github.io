@@ -1,0 +1,251 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulado Engenharia de Software</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#eef2f7;
+    padding:20px;
+}
+
+.container{
+    max-width:950px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,0.12);
+}
+
+h1{
+    text-align:center;
+    color:#0a7c6f;
+}
+
+.questao{
+    margin-bottom:25px;
+    padding:15px;
+    background:#fafafa;
+    border-left:6px solid #0a7c6f;
+}
+
+button{
+    background:#0a7c6f;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#095e54;
+}
+
+#resultado{
+    margin-top:25px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.explicacao{
+    margin-top:8px;
+    font-size:14px;
+    color:#333;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Simulado – Engenharia de Software (Nível Banca)</h1>
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<div class="questao">
+<p><b>1.</b> No contexto da transformação digital, assinale a alternativa correta.</p>
+
+<label><input type="radio" name="q1" value="a"> Refere-se apenas à digitalização de documentos físicos.</label><br>
+<label><input type="radio" name="q1" value="b"> Está restrita à adoção de redes sociais corporativas.</label><br>
+<label><input type="radio" name="q1" value="c"> Envolve mudanças tecnológicas que impactam processos e modelos de negócio.</label><br>
+<label><input type="radio" name="q1" value="d"> Ocorre somente em empresas de tecnologia.</label>
+
+<div class="explicacao" id="exp1"></div>
+</div>
+
+<!-- Q2 -->
+<div class="questao">
+<p><b>2.</b> Analise:</p>
+<p>I. Dados são fatos brutos.<br>
+II. Informação corresponde a dados organizados e significativos.</p>
+
+<label><input type="radio" name="q2" value="a"> As duas são verdadeiras, e II justifica I.</label><br>
+<label><input type="radio" name="q2" value="b"> As duas são verdadeiras, mas II não justifica I.</label><br>
+<label><input type="radio" name="q2" value="c"> I é verdadeira e II é falsa.</label><br>
+<label><input type="radio" name="q2" value="d"> I é falsa e II é verdadeira.</label>
+
+<div class="explicacao" id="exp2"></div>
+</div>
+
+<!-- Q3 -->
+<div class="questao">
+<p><b>3.</b> Um Sistema de Informações Gerenciais (SIG) tem como principal finalidade:</p>
+
+<label><input type="radio" name="q3" value="a"> Executar controle direto de hardware.</label><br>
+<label><input type="radio" name="q3" value="b"> Registrar transações operacionais rotineiras.</label><br>
+<label><input type="radio" name="q3" value="c"> Apoiar decisões gerenciais por meio de relatórios e análises.</label><br>
+<label><input type="radio" name="q3" value="d"> Substituir totalmente os sistemas estratégicos.</label>
+
+<div class="explicacao" id="exp3"></div>
+</div>
+
+<!-- Q4 -->
+<div class="questao">
+<p><b>4.</b> Sobre Engenharia de Software:</p>
+<p>I. Aplica abordagem sistemática ao desenvolvimento de software.<br>
+II. Busca garantir qualidade, custo aceitável e gerenciamento do processo.</p>
+
+<label><input type="radio" name="q4" value="a"> I e II verdadeiras, e II justifica I.</label><br>
+<label><input type="radio" name="q4" value="b"> I e II verdadeiras, mas II não justifica I.</label><br>
+<label><input type="radio" name="q4" value="c"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q4" value="d"> I falsa e II verdadeira.</label>
+
+<div class="explicacao" id="exp4"></div>
+</div>
+
+<!-- Q5 -->
+<div class="questao">
+<p><b>5.</b> Assinale a alternativa que apresenta corretamente as camadas da engenharia de software.</p>
+
+<label><input type="radio" name="q5" value="a"> Processo, Métodos e Ferramentas.</label><br>
+<label><input type="radio" name="q5" value="b"> Hardware, Pessoas e Dados.</label><br>
+<label><input type="radio" name="q5" value="c"> Planejamento, Execução e Monitoramento.</label><br>
+<label><input type="radio" name="q5" value="d"> Entrada, Processamento e Saída.</label>
+
+<div class="explicacao" id="exp5"></div>
+</div>
+
+<!-- Q6 -->
+<div class="questao">
+<p><b>6.</b> Sobre software embarcado, é correto afirmar que:</p>
+
+<label><input type="radio" name="q6" value="a"> Executa exclusivamente em servidores web.</label><br>
+<label><input type="radio" name="q6" value="b"> Não possui interação com hardware.</label><br>
+<label><input type="radio" name="q6" value="c"> É utilizado apenas em aplicações científicas.</label><br>
+<label><input type="radio" name="q6" value="d"> Controla funções específicas de dispositivos ou produtos.</label>
+
+<div class="explicacao" id="exp6"></div>
+</div>
+
+<!-- Q7 -->
+<div class="questao">
+<p><b>7.</b> Analise:</p>
+<p>I. O processo de software define a base para o gerenciamento do projeto.<br>
+II. Métodos e ferramentas são aplicados dentro do processo.</p>
+
+<label><input type="radio" name="q7" value="a"> I e II falsas.</label><br>
+<label><input type="radio" name="q7" value="b"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q7" value="c"> I falsa e II verdadeira.</label><br>
+<label><input type="radio" name="q7" value="d"> I e II verdadeiras.</label>
+
+<div class="explicacao" id="exp7"></div>
+</div>
+
+<!-- Q8 -->
+<div class="questao">
+<p><b>8.</b> Qual alternativa representa um desafio clássico da engenharia de software?</p>
+
+<label><input type="radio" name="q8" value="a"> Eliminar completamente a manutenção.</label><br>
+<label><input type="radio" name="q8" value="b"> Reduzir custos e melhorar a qualidade do software.</label><br>
+<label><input type="radio" name="q8" value="c"> Evitar documentação de requisitos.</label><br>
+<label><input type="radio" name="q8" value="d"> Substituir usuários por automação total.</label>
+
+<div class="explicacao" id="exp8"></div>
+</div>
+
+<!-- Q9 -->
+<div class="questao">
+<p><b>9.</b> No nível operacional das organizações predominam:</p>
+
+<label><input type="radio" name="q9" value="a"> Sistemas de Apoio Executivo.</label><br>
+<label><input type="radio" name="q9" value="b"> Sistemas de Informações Gerenciais.</label><br>
+<label><input type="radio" name="q9" value="c"> Sistemas de Processamento de Transações.</label><br>
+<label><input type="radio" name="q9" value="d"> Sistemas de Apoio à Decisão.</label>
+
+<div class="explicacao" id="exp9"></div>
+</div>
+
+<!-- Q10 -->
+<div class="questao">
+<p><b>10.</b> Sobre sistemas de informação nas organizações:</p>
+<p>I. Podem gerar vantagem competitiva.<br>
+II. Contribuem para melhorar a tomada de decisão.</p>
+
+<label><input type="radio" name="q10" value="a"> I e II verdadeiras.</label><br>
+<label><input type="radio" name="q10" value="b"> I verdadeira e II falsa.</label><br>
+<label><input type="radio" name="q10" value="c"> I falsa e II verdadeira.</label><br>
+<label><input type="radio" name="q10" value="d"> I e II falsas.</label>
+
+<div class="explicacao" id="exp10"></div>
+</div>
+
+<button type="button" onclick="corrigir()">Finalizar Prova</button>
+</form>
+
+<div id="resultado"></div>
+</div>
+
+<script>
+const gabarito = {
+ q1:"c",
+ q2:"b",
+ q3:"c",
+ q4:"a",
+ q5:"a",
+ q6:"d",
+ q7:"d",
+ q8:"b",
+ q9:"c",
+ q10:"a"
+};
+
+const explicacoes = {
+ q1:"Transformação digital envolve mudança de processos e modelos de negócio.",
+ q2:"Dados são fatos brutos e informação é dado tratado; não há relação de justificativa.",
+ q3:"SIG apoia o nível gerencial com relatórios e análises.",
+ q4:"Ambas são verdadeiras e a segunda explica o objetivo da engenharia de software.",
+ q5:"As três camadas clássicas são Processo, Métodos e Ferramentas.",
+ q6:"Software embarcado controla funções específicas de dispositivos.",
+ q7:"O processo é a base e métodos/ferramentas atuam dentro dele.",
+ q8:"O grande desafio é equilibrar custo, qualidade e prazo.",
+ q9:"O nível operacional utiliza SPT.",
+ q10:"Sistemas de informação apoiam decisões e geram vantagem competitiva."
+};
+
+function corrigir(){
+ let pontos=0;
+
+ for(let q in gabarito){
+   const marcada=document.querySelector(`input[name="${q}"]:checked`);
+   if(marcada && marcada.value===gabarito[q]) pontos++;
+   document.getElementById("exp"+q.slice(1)).innerText="✔ "+explicacoes[q];
+ }
+
+ document.getElementById("resultado").innerText=
+   "Pontuação: "+pontos+" / 10";
+}
+</script>
+</body>
+</html>
