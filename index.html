@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Central de Simulados</title>
+  <style>
+    body{
+      font-family: Arial;
+      background:#f4f6f8;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .box{
+      background:white;
+      padding:40px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      text-align:center;
+    }
+    button{
+      display:block;
+      width:220px;
+      margin:12px auto;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      background:#2563eb;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    }
+    button:hover{
+      background:#1e4fd1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>📚 Simulados de Ética</h1>
+
+  <button onclick="irPara('simulado1.html')">
+    ▶️ Abrir Simulado 1
+  </button>
+
+  <button onclick="irPara('simulado2.html')">
+    ▶️ Abrir Simulado 2
+  </button>
+</div>
+
+<script>
+function irPara(pagina){
+  window.location.href = pagina;
+}
+</script>
+
+</body>
+</html>
