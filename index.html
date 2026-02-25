@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Central de Simulados</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+  transition:.3s;
+}
+
+/* ===== HEADER ===== */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  background:#020617;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header h2{
+  color:#38bdf8;
+  font-size:18px;
+}
+
+.toggle{
+  background:#ffffff14;
+  border:none;
+  padding:7px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  color:#fff;
+}
+
+/* ===== CONTEÚDO ===== */
+.content{
+  max-width:900px;
+  margin:0 auto;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* ===== HERO ===== */
+.hero-img{
+  position:relative;
+  width:100%;
+  height:230px;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.hero-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.6);
+}
+
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:20px;
+  transform:translateY(-50%);
+}
+
+.hero-text h1{
+  color:white;
+  font-size:26px;
+  margin-bottom:6px;
+}
+
+.hero-text p{
+  font-size:14px;
+  opacity:.9;
+}
+
+/* ===== LISTA ===== */
+.grid{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:16px;
+  text-align:left;
+  transition:.2s;
+  cursor:pointer;
+}
+
+.card:hover{
+  background:rgba(56,189,248,.08);
+  transform:translateX(4px);
+}
+
+.card h3{
+  color:#7dd3fc;
+  margin-bottom:4px;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;
+  font-size:11px;
+  opacity:.5;
+  padding:20px;
+}
+
+/* ===== TEMA CLARO ===== */
+body.light{
+  background:#f1f5f9;
+  color:#0f172a;
+}
+
+body.light .header{
+  background:#e2e8f0;
+}
+
+body.light .card{
+  background:#ffffff;
+  color:#0f172a;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:600px){
+  .hero-img{
+    height:180px;
+  }
+
+  .hero-text h1{
+    font-size:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <h2>Central de Simulados</h2>
+  <button class="toggle" onclick="toggleTema()">🌙</button>
+</header>
+
+<!-- CONTEÚDO -->
+<div class="content">
+
+  <!-- HERO COM SUA IMAGEM -->
+  <section class="hero-img">
+    <img src="simulado.jpg.jpg" alt="Estudantes universitários">
+    <div class="hero-text">
+      <h1>Central de Simulados</h1>
+      <p>Treine, evolua e mande bem nas provas 🚀</p>
+    </div>
+  </section>
+
+  <!-- LISTA -->
+  <div class="grid">
+
+    <div class="card" onclick="irPara('simulado1.html')">
+      <h3>📚 Ética e Cidadania</h3>
+      <p>Simulado 1</p>
+    </div>
+
+    <div class="card" onclick="irPara('simulado2.html')">
+      <h3>📚 Ética e Cidadania</h3>
+      <p>Simulado 2</p>
+    </div>
+
+    <div class="card" onclick="irPara('simulado1engenharia.html')">
+      <h3>⚙️ Engenharia</h3>
+      <p>Simulado 1</p>
+    </div>
+
+    <div class="card" onclick="irPara('simulado2engenharia.html')">
+      <h3>⚙️ Engenharia</h3>
+      <p>Simulado 2</p>
+    </div>
+
+    <div class="card" onclick="irPara('prova_engenharia2.html')">
+      <h3>🧪 Prova Engenharia</h3>
+      <p>Módulo 2</p>
+    </div>
+
+    <div class="card" onclick="irPara('etica_prova2.html')">
+      <h3>🧪 Prova Ética</h3>
+      <p>Módulo 2</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  © Central de Estudos • Grazi 🚀
+</div>
+
+<script>
+function irPara(p){
+  window.location.href=p;
+}
+
+function toggleTema(){
+  document.body.classList.toggle("light");
+
+  if(document.body.classList.contains("light")){
+    localStorage.setItem("tema","light");
+  }else{
+    localStorage.setItem("tema","dark");
+  }
+}
+
+window.onload = function(){
+  if(localStorage.getItem("tema")==="light"){
+    document.body.classList.add("light");
+  }
+}
+</script>
+
+</body>
+</html>
