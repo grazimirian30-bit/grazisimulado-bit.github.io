@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Central de Simulados</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:230px;
+  background:linear-gradient(180deg,#020617,#0f172a);
+  padding:20px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.logo img{
+  width:70px;
+  border-radius:50%;
+  margin-bottom:8px;
+}
+
+.logo h2{
+  font-size:16px;
+  color:#38bdf8;
+}
+
+.menu button{
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#ffffff0f;
+  color:#e2e8f0;
+  cursor:pointer;
+  transition:.2s;
+  font-size:13px;
+}
+
+.menu button:hover{
+  background:#22c55e;
+  color:#022c22;
+}
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+}
+
+/* TOPBAR */
+.topbar{
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.toggle{
+  background:#ffffff14;
+  border:none;
+  padding:7px 12px;
+  border-radius:999px;
+  cursor:pointer;
+}
+
+/* CONTENT */
+.content{
+  flex:1;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* HERO */
+.hero h1{
+  font-size:24px;
+  color:#38bdf8;
+}
+
+.hero p{
+  font-size:13px;
+  opacity:.8;
+}
+
+/* GRID DASHBOARD */
+.grid{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.4);
+}
+
+.card h3{
+  margin-bottom:8px;
+  color:#7dd3fc;
+  font-size:16px;
+}
+
+/* BUTTON */
+.card button{
+  margin:4px 0;
+  padding:9px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(135deg,#e6e05a,#d4d93b);
+  color:#0f172a;
+  cursor:pointer;
+  font-weight:600;
+  font-size:13px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  font-size:11px;
+  opacity:.5;
+  padding:6px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:800px){
+  body{
+    flex-direction:column;
+    overflow:auto;
+  }
+
+  .sidebar{
+    width:100%;
+    flex-direction:row;
+    align-items:center;
+    overflow-x:auto;
+  }
+
+  .main{
+    height:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+      <h2>Central</h2>
+    </div>
+
+    <div class="menu">
+      <button onclick="alert('Dashboard')">🏠 Dashboard</button>
+      <button onclick="alert('Simulados')">📚 Simulados</button>
+      <button onclick="alert('Provas')">🧪 Provas</button>
+    </div>
+  </div>
+
+  <button class="toggle" onclick="toggleTema()">🌙 Tema</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="topbar">
+    <strong>Bem-vinda, Grazi 🚀</strong>
+  </div>
+
+  <div class="content">
+
+    <div class="hero">
+      <h1>Central de Simulados</h1>
+      <p>Escolha um módulo e comece agora</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>📚 Ética e Cidadania</h3>
+        <button onclick="irPara('simulado1.html')">▶️ Simulado 1</button>
+        <button onclick="irPara('simulado2.html')">▶️ Simulado 2</button>
+      </div>
+
+      <div class="card">
+  <h3>📚 Engenharia</h3>
+  <button onclick="irPara('simulado1engenharia.html')">▶️ Eng 1</button>
+  <button onclick="irPara('simulado2engenharia.html')">▶️ Eng 2</button>
+  <button onclick="irPara('resumoengenharia1.html')">📖 Resumo</button>
+</div>
+
+      <div class="card">
+        <h3>🧪 Prova Engenharia</h3>
+        <button onclick="irPara('prova_engenharia2.html')">Abrir</button>
+      </div>
+
+      <div class="card">
+        <h3>🧪 Prova Ética</h3>
+        <button onclick="irPara('etica_prova2.html')">Abrir</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © Central de Estudos • Dashboard
+  </div>
+
+</div>
+
+<script>
+function irPara(p){
+  window.location.href=p;
+}
+
+function toggleTema(){
+  document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
