@@ -1,0 +1,998 @@
+button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function irPara(pagina){
+  window.location.href = pagina;
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Central PRO — Ética e Cidadania</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --text:#222;
+  --primary:#2563eb;
+  --turbo:#fff7ed;
+}
+
+.dark{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --turbo:#3b2f1a;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:20px;
+  transition:.3s;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  background:var(--card);
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+h1{text-align:center;}
+
+.topbar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.search{
+  flex:1;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+button{
+  padding:12px 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:var(--primary);
+  color:white;
+  font-weight:bold;
+}
+
+/* ACCORDION */
+.section-btn{
+  width:100%;
+  text-align:left;
+  margin:10px 0;
+  font-size:18px;
+}
+
+.content{
+  display:none;
+  padding:20px;
+  margin-bottom:15px;
+  border-left:6px solid var(--primary);
+  background:rgba(0,0,0,.03);
+  border-radius:10px;
+  line-height:1.65;
+}
+
+/* TURBO */
+.turbo{
+  background:var(--turbo);
+  border-left:6px solid #f97316;
+  padding:15px;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+/* MAPA */
+.mapa{
+  background:#eef3ff;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+  font-family:"Courier New", monospace;
+  white-space:pre-line;
+}
+
+/* FLASHCARDS */
+.flash-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+  
+  
+
+.card-inner{
+  position:relative;
+  width:100%;
+  height:160px;
+  transition:transform .6s ease, box-shadow .3s ease;
+  transform-style:preserve-3d;
+  border-radius:16px;
+
+  /* 🔥 efeito 3D */
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.18),
+    0 4px 8px rgba(0,0,0,.10);
+
+  background:var(--card);
+}
+.flashcard:hover .card-inner{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:
+    0 22px 44px rgba(0,0,0,.25),
+    0 10px 18px rgba(0,0,0,.15);
+}
+.flashcard{
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.card-inner{
+  position:relative;
+  width:100%;
+  height:150px;
+  transition:transform .6s;
+  transform-style:preserve-3d;
+}
+
+.flashcard.flip .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-face{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  text-align:center;
+  font-weight:bold;
+}
+.card-front{ background:#4df007; color:white; }
+
+.card-back{
+  background:#ead80a;
+  color:#111;
+  transform:rotateY(180deg);
+}
+
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:6px;
+  background:#c13109;
+  width:0%;
+  z-index:999;
+}
+
+.highlight{
+  background:yellow;
+  color:black;
+}
+
+@media(max-width:700px){
+  .topbar{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="container">
+
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<h1>📚 Central PRO — Ética e Cidadania</h1>
+
+<div class="topbar">
+<input class="search" id="busca" placeholder="🔎 Buscar no resumo..." onkeyup="buscar()">
+<button onclick="toggleDark()">🌙 Modo</button>
+</div>
+
+<!-- ================= UNIDADE 1 ================= -->
+<button class="section-btn" onclick="toggle('u1')">
+📘 Unidade 1 — Ética: sua essência e o cotidiano
+</button>
+
+<div id="u1" class="content">
+
+<div class="turbo">
+<strong>⚡ Resumo Turbo:</strong><br>
+Ética = reflexão racional • Moral = costumes •  
+Aristóteles → eudaimonia •  
+Senso moral = reação • Consciência moral = reflexão
+</div>
+
+<h3>🔷 Fundamentos da ética</h3>
+<p>
+A ética é um campo da filosofia que investiga os princípios que orientam o comportamento humano. Seu foco principal é compreender como devemos agir para promover o bem comum e a convivência social harmoniosa.
+</p>
+
+<p>
+Diferentemente das regras morais, que muitas vezes são seguidas por hábito, a ética exige reflexão crítica, análise das consequências e responsabilidade pelas decisões.
+</p>
+
+<h3>🧠 Características da ética</h3>
+<ul>
+<li>é racional e reflexiva</li>
+<li>analisa valores e normas</li>
+<li>busca o bem comum</li>
+<li>orienta decisões conscientes</li>
+<li>considera consequências das ações</li>
+</ul>
+
+<h3>📍 Aristóteles e a ética da virtude</h3>
+<p>
+Para Aristóteles, o objetivo da vida humana é a <strong>eudaimonia</strong> (felicidade plena). Essa felicidade não é prazer momentâneo, mas uma vida bem vivida baseada na virtude.
+</p>
+
+<ul>
+<li>virtude = hábito de agir bem</li>
+<li>justo meio = equilíbrio entre extremos</li>
+<li>razão deve orientar as ações</li>
+</ul>
+
+<h3>⚖️ Ética x Moral</h3>
+<p>
+A moral refere-se ao conjunto de costumes, normas e valores de um grupo social. Já a ética é a reflexão crítica sobre essas normas.
+</p>
+
+<ul>
+<li><strong>Moral:</strong> prática, costumeira, cultural</li>
+<li><strong>Ética:</strong> teórica, reflexiva, crítica</li>
+</ul>
+
+<h3>🧩 Senso moral e consciência moral</h3>
+<p>
+O senso moral é a reação imediata diante de situações do cotidiano, enquanto a consciência moral envolve reflexão racional e justificativa das ações.
+</p>
+
+<h3>❗ Dilemas éticos contemporâneos</h3>
+<ul>
+<li>bioética e manipulação genética</li>
+<li>privacidade digital</li>
+<li>uso de inteligência artificial</li>
+<li>desigualdades sociais</li>
+<li>direitos humanos</li>
+</ul>
+
+<h3>🎯 Ética como projeto de vida</h3>
+<p>
+A ética orienta a construção de uma vida responsável e consciente, contribuindo para uma sociedade mais justa, democrática e solidária.
+</p>
+
+<div class="mapa">
+ÉTICA — ESSÊNCIA E COTIDIANO
+│
+├── Fundamentos da ética
+├── Aristóteles e virtude
+├── Ética x Moral
+├── Senso e Consciência
+├── Dilemas contemporâneos
+└── Projeto de vida
+</div>
+
+<div class="mindmap">
+  <div class="node">Ética</div>
+  <div class="level">
+    <div class="child">Fundamentos</div>
+    <div class="child">Aristóteles</div>
+    <div class="child">Ética x Moral</div>
+    <div class="child">Consciência</div>
+    <div class="child">Dilemas</div>
+    <div class="child">Projeto</div>
+  </div>
+</div>
+
+</div>
+
+<!-- ================= UNIDADE 2 ================= -->
+<button class="section-btn" onclick="toggle('u2')">
+📗 Unidade 2 — Atuação profissional ética
+</button>
+
+<div id="u2" class="content">
+
+<div class="turbo">
+<strong>⚡ Resumo Turbo:</strong><br>
+Profissional ético = técnica + responsabilidade •  
+Normas organizam o trabalho •  
+Era digital traz riscos éticos
+</div>
+
+<h3>💼 Profissional e responsabilidade social</h3>
+<p>
+O profissional contemporâneo deve compreender que sua atuação possui impacto direto na sociedade. Por isso, competência técnica e responsabilidade ética devem caminhar juntas.
+</p>
+
+<ul>
+<li>compromisso com a sociedade</li>
+<li>respeito às normas</li>
+<li>transparência nas ações</li>
+<li>responsabilidade pelos resultados</li>
+</ul>
+
+<h3>🚨 Função das normas no trabalho</h3>
+<p>
+As normas profissionais (códigos de ética, leis e regulamentos) organizam o ambiente de trabalho e estabelecem padrões de conduta.
+</p>
+
+<ul>
+<li>evitam abusos</li>
+<li>promovem confiança</li>
+<li>garantem justiça</li>
+<li>protegem usuários e profissionais</li>
+</ul>
+
+<h3>⚖️ Dilemas éticos profissionais</h3>
+<p>
+O avanço tecnológico e a competitividade do mercado aumentaram a complexidade das decisões profissionais.
+</p>
+
+<ul>
+<li>pressão por produtividade</li>
+<li>corrupção</li>
+<li>uso indevido de dados</li>
+<li>assédio</li>
+<li>conflito de interesses</li>
+</ul>
+
+<h3>🌐 Impactos da sociedade digital</h3>
+<p>
+A transformação digital trouxe benefícios, mas também desafios éticos importantes.
+</p>
+
+<ul>
+<li>big data</li>
+<li>inteligência artificial</li>
+<li>automação do trabalho</li>
+<li>vigilância digital</li>
+<li>fake news</li>
+</ul>
+
+<h3>🧠 Papel do profissional na era digital</h3>
+<ul>
+<li>agir com responsabilidade informacional</li>
+<li>proteger dados pessoais</li>
+<li>usar tecnologia de forma ética</li>
+<li>avaliar impactos sociais</li>
+<li>promover inclusão digital</li>
+</ul>
+
+<div class="mapa">
+ATUAÇÃO PROFISSIONAL ÉTICA
+│
+├── Responsabilidade social
+├── Normas profissionais
+├── Dilemas éticos
+├── Sociedade digital
+└── Papel do profissional
+</div>
+
+<div class="mindmap">
+  <div class="node">Ética Profissional</div>
+  <div class="level">
+    <div class="child">Responsabilidade</div>
+    <div class="child">Normas</div>
+    <div class="child">Dilemas</div>
+    <div class="child">Tecnologia</div>
+    <div class="child">Impacto social</div>
+   </div>
+</div>
+
+</div>
+<!-- ================= UNIDADE 3 ================= -->
+<button class="section-btn" onclick="toggle('u3')">
+📙 Unidade 3 — Vivência profissional e construção da cidadania
+</button>
+
+<div id="u3" class="content">
+
+<div class="turbo">
+<strong>⚡ Resumo Turbo:</strong><br>
+Cidadania = direitos + deveres •  
+participação social •  
+responsabilidade coletiva •  
+cuidado com sociedade e meio ambiente
+</div>
+
+<h3>🌍 Cidadania ontem e hoje</h3>
+
+<p>
+A cidadania refere-se à participação das pessoas na vida social e política de uma sociedade. 
+Ao longo da história, o conceito de cidadania evoluiu muito.
+</p>
+
+<p>
+Na Grécia Antiga, apenas homens livres eram considerados cidadãos. Mulheres, escravos e estrangeiros não possuíam direitos políticos.
+</p>
+
+<p>
+Com o passar do tempo, movimentos sociais e transformações políticas ampliaram os direitos de cidadania.
+</p>
+
+<ul>
+<li>direitos civis</li>
+<li>direitos políticos</li>
+<li>direitos sociais</li>
+</ul>
+
+<h3>🏛️ O espaço da cidadania</h3>
+
+<p>
+A cidadania não se manifesta apenas na política. Ela ocorre em diversos espaços da vida cotidiana.
+</p>
+
+<ul>
+<li>família</li>
+<li>trabalho</li>
+<li>escola</li>
+<li>comunidade</li>
+<li>sociedade</li>
+</ul>
+
+<p>
+O cidadão participa da construção social por meio de suas ações, atitudes e decisões.
+</p>
+
+<h3>🤝 Cidadania e responsabilidade social</h3>
+
+<p>
+Ser cidadão envolve reconhecer responsabilidades diante da coletividade.
+</p>
+
+<ul>
+<li>respeitar direitos dos outros</li>
+<li>cumprir deveres sociais</li>
+<li>participar da vida pública</li>
+<li>promover justiça social</li>
+</ul>
+
+<h3>🌱 É preciso cuidar</h3>
+
+<p>
+A cidadania também envolve cuidado com o mundo em que vivemos.
+</p>
+
+<ul>
+<li>preservação ambiental</li>
+<li>combate à desigualdade</li>
+<li>defesa dos direitos humanos</li>
+<li>responsabilidade social</li>
+</ul>
+
+<p>
+A construção de uma sociedade mais justa depende da participação ativa dos cidadãos.
+</p>
+
+<div class="mapa">
+CIDADANIA
+│
+├── Direitos civis
+├── Direitos políticos
+├── Direitos sociais
+├── Participação social
+├── Responsabilidade coletiva
+└── Cuidado com o planeta
+</div>
+
+</div>
+<!-- ================= UNIDADE 4 ================= -->
+<button class="section-btn" onclick="toggle('u4')">
+📕 Unidade 4 — O diverso e o desigual
+</button>
+
+<div id="u4" class="content">
+
+<div class="turbo">
+<strong>⚡ Resumo Turbo:</strong><br>
+Diversidade ≠ desigualdade •  
+preconceito gera exclusão •  
+igualdade de oportunidades •  
+respeito às diferenças
+</div>
+
+<h3>🌎 Diversidade social</h3>
+
+<p>
+A sociedade é composta por pessoas diferentes em cultura, religião, gênero, etnia e valores.
+</p>
+
+<p>
+Essas diferenças fazem parte da diversidade humana e devem ser respeitadas.
+</p>
+
+<h3>⚖️ Diferença x desigualdade</h3>
+
+<p>
+Ser diferente não significa ser inferior. O problema ocorre quando as diferenças são usadas para justificar discriminação ou exclusão.
+</p>
+
+<ul>
+<li>racismo</li>
+<li>preconceito social</li>
+<li>machismo</li>
+<li>intolerância religiosa</li>
+</ul>
+
+<h3>👩‍💼 A profissão não tem gênero</h3>
+
+<p>
+Durante muito tempo, algumas profissões foram associadas a homens ou mulheres.
+</p>
+
+<p>
+Hoje busca-se igualdade de oportunidades no mercado de trabalho.
+</p>
+
+<h3>🌍 Uma sociedade possível</h3>
+
+<p>
+Uma sociedade ética deve promover inclusão, respeito e igualdade de oportunidades.
+</p>
+
+<ul>
+<li>combater desigualdades</li>
+<li>valorizar diversidade</li>
+<li>garantir direitos humanos</li>
+<li>promover justiça social</li>
+</ul>
+
+<div class="mapa">
+DIVERSIDADE
+│
+├── diferenças culturais
+├── igualdade de oportunidades
+├── combate ao preconceito
+├── inclusão social
+└── justiça social
+</div>
+
+</div>
+<!-- ================= FLASHCARDS ================= -->
+<button class="section-btn" onclick="toggle('flash')">
+🎴 Flashcards para prova
+</button>
+
+<div id="flash" class="content">
+
+<div class="flash-controls">
+<button onclick="embaralhar()">🔀 Embaralhar</button>
+<button onclick="resetar()">🔄 Resetar estudo</button>
+
+<div class="contador">
+Progresso: <span id="acertos">0</span>/<span id="total"></span>
+</div>
+</div>
+
+
+<!-- ================= UNIDADE 1 ================= -->
+
+<h3>📘 Flashcards — Unidade 1</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">O que é ética?</div>
+<div class="card-face card-back">Reflexão racional sobre o comportamento humano.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">O que é moral?</div>
+<div class="card-face card-back">Conjunto de costumes e valores sociais.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Ética x Moral</div>
+<div class="card-face card-back">A moral são regras; a ética analisa essas regras.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Aristóteles</div>
+<div class="card-face card-back">Defendeu a ética da virtude.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Eudaimonia</div>
+<div class="card-face card-back">Felicidade plena segundo Aristóteles.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Virtude</div>
+<div class="card-face card-back">Hábito de agir corretamente.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Justo meio</div>
+<div class="card-face card-back">Equilíbrio entre extremos.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Senso moral</div>
+<div class="card-face card-back">Reação imediata diante de situações.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Consciência moral</div>
+<div class="card-face card-back">Reflexão racional sobre nossas ações.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Função da ética</div>
+<div class="card-face card-back">Promover convivência justa.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+
+<!-- ================= UNIDADE 2 ================= -->
+
+<h3 style="margin-top:30px;">📗 Flashcards — Unidade 2</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Profissional ético</div>
+<div class="card-face card-back">Une técnica e responsabilidade social.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Códigos de ética</div>
+<div class="card-face card-back">Normas que orientam a profissão.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Normas profissionais</div>
+<div class="card-face card-back">Organizam o ambiente de trabalho.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Corrupção</div>
+<div class="card-face card-back">Uso indevido de poder.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Conflito de interesses</div>
+<div class="card-face card-back">Interesse pessoal interfere nas decisões.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Privacidade digital</div>
+<div class="card-face card-back">Proteção de dados pessoais.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Fake news</div>
+<div class="card-face card-back">Informações falsas na internet.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Responsabilidade profissional</div>
+<div class="card-face card-back">Responder pelos impactos do trabalho.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Tecnologia e ética</div>
+<div class="card-face card-back">Tecnologia deve ser usada com responsabilidade.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Sociedade digital</div>
+<div class="card-face card-back">Sociedade baseada em informação e tecnologia.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+
+<!-- ================= UNIDADE 3 ================= -->
+
+<h3 style="margin-top:30px;">📙 Flashcards — Unidade 3</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Cidadania</div>
+<div class="card-face card-back">Conjunto de direitos e deveres.<br><br><button class="ok-btn" onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Direitos civis</div>
+<div class="card-face card-back">Liberdade e igualdade perante a lei.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Direitos políticos</div>
+<div class="card-face card-back">Participação política.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Direitos sociais</div>
+<div class="card-face card-back">Saúde, educação e trabalho.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Participação social</div>
+<div class="card-face card-back">Atuação ativa na sociedade.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Responsabilidade social</div>
+<div class="card-face card-back">Pensar no bem coletivo.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Cidadania no trabalho</div>
+<div class="card-face card-back">Comportamento ético profissional.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Cuidado ambiental</div>
+<div class="card-face card-back">Dever de preservar o planeta.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Sociedade democrática</div>
+<div class="card-face card-back">Baseada em participação e igualdade.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Cidadão ativo</div>
+<div class="card-face card-back">Participa da construção social.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+
+<!-- ================= UNIDADE 4 ================= -->
+
+<h3 style="margin-top:30px;">📕 Flashcards — Unidade 4</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Diversidade</div>
+<div class="card-face card-back">Diferenças culturais e sociais.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Preconceito</div>
+<div class="card-face card-back">Julgamento sem conhecimento.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Discriminação</div>
+<div class="card-face card-back">Tratamento injusto.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Racismo</div>
+<div class="card-face card-back">Discriminação racial.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Machismo</div>
+<div class="card-face card-back">Desigualdade de gênero.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Inclusão social</div>
+<div class="card-face card-back">Participação de todos na sociedade.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Igualdade</div>
+<div class="card-face card-back">Mesmas oportunidades.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Profissão e gênero</div>
+<div class="card-face card-back">Profissões não têm gênero.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Sociedade justa</div>
+<div class="card-face card-back">Baseada em respeito e igualdade.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Direitos humanos</div>
+<div class="card-face card-back">Direitos fundamentais para todos.<br><br><button class="ok-btn">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+let aprendidos = 0;
+
+/* abre e fecha seções */
+
+function toggle(id){
+
+const el = document.getElementById(id)
+
+if(!el) return
+
+const isHidden = window.getComputedStyle(el).display === "none"
+
+el.style.display = isHidden ? "block" : "none"
+
+}
+
+/* vira o flashcard */
+
+function flip(el){
+el.classList.toggle("flip")
+}
+
+/* contador de cards */
+
+function iniciarContador(){
+const total = document.querySelectorAll(".flashcard").length;
+document.getElementById("total").innerText = total;
+}
+
+/* marcar aprendido */
+
+function marcar(e,btn){
+
+e.stopPropagation();
+
+const card = btn.closest(".flashcard");
+
+if(!card.classList.contains("aprendido")){
+card.classList.add("aprendido");
+
+aprendidos++;
+
+document.getElementById("acertos").innerText = aprendidos;
+
+card.style.opacity = "0.4";
+}
+
+}
+
+/* resetar estudo */
+
+function resetar(){
+
+aprendidos = 0;
+
+document.getElementById("acertos").innerText = 0;
+
+document.querySelectorAll(".flashcard").forEach(c=>{
+c.classList.remove("aprendido");
+c.style.opacity = "1";
+})
+
+}
+
+/* embaralhar */
+
+function embaralhar(){
+
+document.querySelectorAll(".flash-grid").forEach(grid=>{
+
+let cards = Array.from(grid.children);
+
+cards.sort(()=>Math.random() - 0.5);
+
+cards.forEach(c => grid.appendChild(c));
+
+});
+
+}
+
+window.onload = iniciarContador;
+
+</script>
