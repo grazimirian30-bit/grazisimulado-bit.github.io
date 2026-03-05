@@ -1,0 +1,317 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulado Módulo 3 - UML</title>
+
+<style>
+
+:root{
+--bg:#f4f6f8;
+--card:#ffffff;
+--text:#222;
+--primary:#2563eb;
+}
+
+.dark{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#e5e7eb;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Arial;
+padding:20px;
+max-width:900px;
+margin:auto;
+transition:.3s;
+}
+
+h1{
+text-align:center;
+}
+
+.pergunta{
+background:var(--card);
+padding:15px;
+border-radius:12px;
+margin-bottom:20px;
+box-shadow:0 6px 12px rgba(0,0,0,0.1);
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:var(--primary);
+color:white;
+cursor:pointer;
+font-weight:bold;
+margin-top:10px;
+}
+
+button:hover{
+opacity:.9;
+}
+
+.explicacao{
+background:var(--card);
+padding:10px;
+margin-top:10px;
+border-left:6px solid var(--primary);
+border-radius:8px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>🎓 Simulado — Módulo 3 (UML)</h1>
+
+<button onclick="toggleDark()">🌙 Modo Escuro</button>
+<button onclick="lerPerguntas()">🔊 Ler Perguntas</button>
+
+<div id="quiz"></div>
+
+<button onclick="corrigir()">📊 Corrigir Simulado</button>
+
+<h2 id="resultado"></h2>
+
+<div id="explicacoes"></div>
+
+<script>
+
+/* QUESTÕES */
+
+const questoes = [
+
+{
+pergunta:"1. A UML é utilizada principalmente para:",
+opcoes:[
+"Modelar sistemas de software",
+"Executar programas",
+"Criar hardware",
+"Programar banco de dados"
+],
+correta:0,
+exp:"A UML (Unified Modeling Language) é usada para representar visualmente sistemas e facilitar o planejamento do software."
+},
+
+{
+pergunta:"2. O diagrama que representa a estrutura estática do sistema é:",
+opcoes:[
+"Diagrama de classes",
+"Diagrama de atividades",
+"Diagrama de sequência",
+"Diagrama de estados"
+],
+correta:0,
+exp:"O diagrama de classes mostra classes, atributos, métodos e relacionamentos."
+},
+
+{
+pergunta:"3. Um objeto em UML é:",
+opcoes:[
+"Instância de uma classe",
+"Tipo de banco de dados",
+"Interface gráfica",
+"Algoritmo"
+],
+correta:0,
+exp:"Objeto é uma instância criada a partir de uma classe."
+},
+
+{
+pergunta:"4. O diagrama de casos de uso representa:",
+opcoes:[
+"Interação entre usuário e sistema",
+"Estrutura física",
+"Banco de dados",
+"Rede"
+],
+correta:0,
+exp:"Casos de uso mostram como o usuário interage com o sistema."
+},
+
+{
+pergunta:"5. Herança em UML representa:",
+opcoes:[
+"Generalização entre classes",
+"Banco de dados",
+"Fluxo de rede",
+"Algoritmo"
+],
+correta:0,
+exp:"Herança permite reutilização de código entre classes."
+},
+
+{
+pergunta:"6. O diagrama de sequência mostra:",
+opcoes:[
+"Ordem das interações entre objetos",
+"Estrutura de classes",
+"Fluxo de rede",
+"Hardware"
+],
+correta:0,
+exp:"Ele mostra troca de mensagens entre objetos ao longo do tempo."
+},
+
+{
+pergunta:"7. Um atributo representa:",
+opcoes:[
+"Característica da classe",
+"Fluxo de dados",
+"Interface",
+"Banco de dados"
+],
+correta:0,
+exp:"Atributos representam propriedades da classe."
+},
+
+{
+pergunta:"8. Um método representa:",
+opcoes:[
+"Função da classe",
+"Banco de dados",
+"Hardware",
+"Rede"
+],
+correta:0,
+exp:"Métodos são ações ou comportamentos da classe."
+},
+
+{
+pergunta:"9. O diagrama de atividades representa:",
+opcoes:[
+"Fluxo de processos",
+"Estrutura física",
+"Banco de dados",
+"Rede"
+],
+correta:0,
+exp:"Ele representa fluxo de ações e decisões."
+},
+
+{
+pergunta:"10. A principal vantagem da UML é:",
+opcoes:[
+"Facilitar comunicação entre desenvolvedores",
+"Eliminar programação",
+"Criar hardware",
+"Substituir banco de dados"
+],
+correta:0,
+exp:"UML melhora entendimento do sistema entre equipe."
+}
+
+]
+
+
+/* GERAR PERGUNTAS */
+
+const container = document.getElementById("quiz")
+
+questoes.forEach((q,i)=>{
+
+let html = `<div class="pergunta"><p><b>${q.pergunta}</b></p>`
+
+q.opcoes.forEach((op,j)=>{
+
+html += `
+<label>
+<input type="radio" name="q${i}" value="${j}">
+${op}
+</label><br>
+`
+
+})
+
+html += "</div>"
+
+container.innerHTML += html
+
+})
+
+
+/* CORRIGIR */
+
+function corrigir(){
+
+let pontos = 0
+let explicacoes = ""
+
+questoes.forEach((q,i)=>{
+
+const marcada = document.querySelector(`input[name="q${i}"]:checked`)
+
+if(marcada){
+
+if(parseInt(marcada.value) === q.correta){
+
+pontos++
+
+explicacoes += `<div class="explicacao">✅ ${q.pergunta}<br>${q.exp}</div>`
+
+}else{
+
+explicacoes += `<div class="explicacao">❌ ${q.pergunta}<br>${q.exp}</div>`
+
+}
+
+}
+
+})
+
+let nota = (pontos/questoes.length*10).toFixed(1)
+
+document.getElementById("resultado").innerHTML =
+`Pontuação: ${pontos}/10 | Nota: ${nota}`
+
+document.getElementById("explicacoes").innerHTML = explicacoes
+
+}
+
+
+/* MODO ESCURO */
+
+function toggleDark(){
+document.body.classList.toggle("dark")
+}
+
+
+/* LEITURA DE VOZ */
+
+function lerPerguntas(){
+
+let texto = ""
+
+questoes.forEach(q=>{
+texto += q.pergunta + ". "
+})
+
+const fala = new SpeechSynthesisUtterance(texto)
+
+fala.lang = "pt-BR"
+
+speechSynthesis.speak(fala)
+
+}
+
+</script>
+
+</body>
+</html>
+```

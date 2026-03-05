@@ -1,0 +1,239 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Módulo 4 - Processos de Software</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f3f6fb;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+}
+
+.questao{
+margin-bottom:25px;
+padding:15px;
+background:#fafafa;
+border-left:6px solid #2f7afc;
+}
+
+button{
+padding:12px 20px;
+background:#2f7afc;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#1f5ed6;
+}
+
+.resultado{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+.gabarito{
+margin-top:20px;
+background:#eef2ff;
+padding:15px;
+border-radius:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Módulo 4 – Processos de Desenvolvimento de Software</h1>
+
+<form id="quiz">
+
+<div class="questao">
+<p><b>1. O processo de desenvolvimento de software pode ser entendido como:</b></p>
+
+<label><input type="radio" name="q1" value="a"> conjunto estruturado de atividades para produzir software</label><br>
+<label><input type="radio" name="q1" value="b"> apenas a fase de programação</label><br>
+<label><input type="radio" name="q1" value="c"> um processo informal sem planejamento</label><br>
+<label><input type="radio" name="q1" value="d"> apenas testes do sistema</label>
+
+</div>
+
+<div class="questao">
+<p><b>2. O estudo de viabilidade em um projeto de software tem como principal objetivo:</b></p>
+
+<label><input type="radio" name="q2" value="a"> desenvolver o código do sistema</label><br>
+<label><input type="radio" name="q2" value="b"> verificar se o sistema é tecnicamente e economicamente possível</label><br>
+<label><input type="radio" name="q2" value="c"> documentar apenas os requisitos</label><br>
+<label><input type="radio" name="q2" value="d"> eliminar a fase de planejamento</label>
+
+</div>
+
+<div class="questao">
+<p><b>3. O gerenciamento do processo de desenvolvimento de software envolve:</b></p>
+
+<label><input type="radio" name="q3" value="a"> apenas controle financeiro</label><br>
+<label><input type="radio" name="q3" value="b"> coordenação de atividades, recursos e prazos</label><br>
+<label><input type="radio" name="q3" value="c"> substituição de metodologias</label><br>
+<label><input type="radio" name="q3" value="d"> apenas testes finais</label>
+
+</div>
+
+<div class="questao">
+<p><b>4. As metodologias de desenvolvimento de software são utilizadas para:</b></p>
+
+<label><input type="radio" name="q4" value="a"> evitar planejamento do projeto</label><br>
+<label><input type="radio" name="q4" value="b"> substituir a análise de requisitos</label><br>
+<label><input type="radio" name="q4" value="c"> orientar a organização das etapas de desenvolvimento</label><br>
+<label><input type="radio" name="q4" value="d"> eliminar testes do sistema</label>
+
+</div>
+
+<div class="questao">
+<p><b>5. A documentação no desenvolvimento de software é importante porque:</b></p>
+
+<label><input type="radio" name="q5" value="a"> aumenta a complexidade do sistema</label><br>
+<label><input type="radio" name="q5" value="b"> permite registrar informações sobre funcionamento e manutenção</label><br>
+<label><input type="radio" name="q5" value="c"> substitui a programação</label><br>
+<label><input type="radio" name="q5" value="d"> elimina a necessidade de testes</label>
+
+</div>
+
+<div class="questao">
+<p><b>6. Um dos desafios no desenvolvimento de software é:</b></p>
+
+<label><input type="radio" name="q6" value="a"> manter qualidade e cumprir prazos</label><br>
+<label><input type="radio" name="q6" value="b"> eliminar requisitos do sistema</label><br>
+<label><input type="radio" name="q6" value="c"> reduzir a participação dos usuários</label><br>
+<label><input type="radio" name="q6" value="d"> evitar planejamento do projeto</label>
+
+</div>
+
+<div class="questao">
+<p><b>7. As metodologias ágeis são caracterizadas principalmente por:</b></p>
+
+<label><input type="radio" name="q7" value="a"> processos rígidos e documentação extensa</label><br>
+<label><input type="radio" name="q7" value="b"> desenvolvimento incremental e colaboração</label><br>
+<label><input type="radio" name="q7" value="c"> ausência de planejamento</label><br>
+<label><input type="radio" name="q7" value="d"> eliminação de testes</label>
+
+</div>
+
+<div class="questao">
+<p><b>8. O planejamento em projetos de software busca:</b></p>
+
+<label><input type="radio" name="q8" value="a"> organizar recursos, atividades e prazos</label><br>
+<label><input type="radio" name="q8" value="b"> eliminar a análise do sistema</label><br>
+<label><input type="radio" name="q8" value="c"> reduzir a participação da equipe</label><br>
+<label><input type="radio" name="q8" value="d"> evitar documentação</label>
+
+</div>
+
+<div class="questao">
+<p><b>9. A qualidade de software está relacionada a:</b></p>
+
+<label><input type="radio" name="q9" value="a"> apenas ao tamanho do código</label><br>
+<label><input type="radio" name="q9" value="b"> capacidade do sistema atender às necessidades do usuário</label><br>
+<label><input type="radio" name="q9" value="c"> ausência de documentação</label><br>
+<label><input type="radio" name="q9" value="d"> quantidade de linhas de código</label>
+
+</div>
+
+<div class="questao">
+<p><b>10. A manutenção de software refere-se:</b></p>
+
+<label><input type="radio" name="q10" value="a"> apenas à correção de erros</label><br>
+<label><input type="radio" name="q10" value="b"> somente à atualização visual do sistema</label><br>
+<label><input type="radio" name="q10" value="c"> conjunto de modificações realizadas após a entrega do sistema</label><br>
+<label><input type="radio" name="q10" value="d"> eliminação de funcionalidades</label>
+
+</div>
+
+<button type="button" onclick="corrigir()">Corrigir Simulado</button>
+
+</form>
+
+<div id="resultado" class="resultado"></div>
+<div id="gabarito" class="gabarito"></div>
+
+</div>
+
+<script>
+
+function corrigir(){
+
+let respostas={
+q1:"a",
+q2:"b",
+q3:"b",
+q4:"c",
+q5:"b",
+q6:"a",
+q7:"b",
+q8:"a",
+q9:"b",
+q10:"c"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let marcada=document.querySelector('input[name="'+q+'"]:checked');
+
+if(marcada && marcada.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML="Pontuação: "+pontos+" / 10";
+
+document.getElementById("gabarito").innerHTML=
+
+"<h3>Gabarito Comentado</h3>"+
+"1-A: processo de software é um conjunto organizado de atividades.<br>"+
+"2-B: estudo de viabilidade verifica possibilidade técnica e econômica.<br>"+
+"3-B: gerenciamento envolve coordenação de recursos e prazos.<br>"+
+"4-C: metodologias estruturam as etapas do desenvolvimento.<br>"+
+"5-B: documentação registra funcionamento e facilita manutenção.<br>"+
+"6-A: qualidade e prazos são desafios comuns.<br>"+
+"7-B: metodologias ágeis usam colaboração e entregas incrementais.<br>"+
+"8-A: planejamento organiza tarefas e recursos.<br>"+
+"9-B: qualidade significa atender às necessidades do usuário.<br>"+
+"10-C: manutenção inclui alterações após entrega.";
+
+}
+
+</script>
+
+</body>
+</html>
