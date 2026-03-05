@@ -1,0 +1,1062 @@
+button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function irPara(pagina){
+  window.location.href = pagina;
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central PRO — Engenharia de Software</title>
+
+<style>
+
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --text:#222;
+  --primary:#2563eb;
+}
+
+.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#e5e7eb;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:20px;
+  transition:.3s;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  background:var(--card);
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+h1{
+  text-align:center;
+}
+
+button{
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:var(--primary);
+  color:white;
+  font-weight:bold;
+  margin:5px 0;
+}
+
+.section-btn{
+  width:100%;
+  text-align:left;
+  font-size:18px;
+  margin-top:15px;
+}
+
+.content{
+  display:none;
+  padding:20px;
+  margin-bottom:15px;
+  border-left:6px solid var(--primary);
+  background:rgba(0,0,0,.03);
+  border-radius:10px;
+}
+
+.flash-grid{
+  margin-bottom:40px;
+
+}
+.content h3{
+  margin-top:40px;
+  margin-bottom:15px;
+}
+
+
+.flash-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+
+.flashcard{
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.card-inner{
+  position:relative;
+  width:100%;
+  height:130px;
+  transition:transform .6s ease;
+  transform-style:preserve-3d;
+}
+
+.flashcard.flip .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-face{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  text-align:center;
+  font-weight:bold;
+  box-shadow:0 12px 24px rgba(0,0,0,.15);
+}
+
+.card-front{
+  background:#22c55e;
+  color:white;
+}
+
+.card-back{
+  background:#facc15;
+  color:#111;
+  transform:rotateY(180deg);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📚 Central PRO — Engenharia de Software</h1>
+
+<button onclick="toggleDark()">🌙 Modo</button>
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+
+<!-- ================= MODULO 1 ================= -->
+
+<button class="section-btn" onclick="toggle('m1')">
+📘 Módulo 1 — Transformação Digital
+</button>
+
+<div id="m1" class="content">
+
+<h3>Transformação Digital</h3>
+<p>
+A Transformação Digital é um processo estratégico que envolve a incorporação
+de tecnologias digitais em todas as áreas de uma organização, provocando
+mudanças profundas na forma como ela opera e entrega valor aos clientes.
+Não se trata apenas de informatizar processos existentes, mas de repensar
+modelos de negócio, cultura organizacional e estratégias competitivas.
+</p>
+
+<p>
+Empresas que adotam a transformação digital conseguem maior agilidade,
+melhor tomada de decisão baseada em dados e maior capacidade de inovação.
+</p>
+
+<h3>Tecnologias impulsionadoras</h3>
+<ul>
+<li><b>Computação em Nuvem:</b> permite armazenamento e processamento remoto com escalabilidade.</li>
+<li><b>Big Data:</b> análise de grandes volumes de dados para gerar insights estratégicos.</li>
+<li><b>Inteligência Artificial:</b> sistemas capazes de aprender e tomar decisões.</li>
+<li><b>Internet das Coisas (IoT):</b> dispositivos conectados que coletam e trocam dados.</li>
+<li><b>Aplicações Web e Mobile:</b> ampliam acesso e interação com usuários.</li>
+</ul>
+
+<h3>Sistemas de Informação</h3>
+<p>
+Um Sistema de Informação (SI) é um conjunto organizado de componentes
+inter-relacionados que coletam, processam, armazenam e distribuem informações
+para apoiar o controle, coordenação e tomada de decisão dentro das organizações.
+</p>
+
+<h3>Elementos de um SI</h3>
+<ul>
+<li><b>Hardware:</b> equipamentos físicos.</li>
+<li><b>Software:</b> programas e aplicações.</li>
+<li><b>Pessoas:</b> usuários e profissionais de TI.</li>
+<li><b>Dados:</b> matéria-prima da informação.</li>
+<li><b>Processos:</b> regras e procedimentos organizacionais.</li>
+</ul>
+
+<h3>Dado x Informação</h3>
+<p>
+Dado é um fato isolado, sem contexto ou significado.
+Informação é o resultado do processamento e organização dos dados,
+gerando sentido e utilidade para a tomada de decisão.
+</p>
+
+<h3>Engenharia de Software</h3>
+<p>
+A Engenharia de Software é a aplicação sistemática, disciplinada e
+quantificável ao desenvolvimento, operação e manutenção de software.
+Seu objetivo é produzir sistemas de alta qualidade,
+com custo adequado e dentro do prazo estabelecido.
+</p>
+
+<h3>Camadas da Engenharia</h3>
+<ul>
+<li><b>Processo:</b> define a estrutura de desenvolvimento.</li>
+<li><b>Métodos:</b> técnicas de análise, projeto e teste.</li>
+<li><b>Ferramentas:</b> softwares de apoio automatizado (CASE).</li>
+</ul>
+
+<h3>Principais Desafios</h3>
+<ul>
+<li>Crescimento acelerado da demanda por software.</li>
+<li>Complexidade crescente dos sistemas.</li>
+<li>Custos elevados de desenvolvimento e manutenção.</li>
+<li>Requisitos mal definidos.</li>
+<li>Falhas na comunicação entre stakeholders.</li>
+</ul>
+
+</div>
+<!-- ================= MODULO 2 ================= -->
+
+<button class="section-btn" onclick="toggle('m2')">
+📘 Módulo 2 — Transformação Digital
+</button>
+<div id="m2" class="content">
+
+<h3>Engenharia de Requisitos</h3>
+<p>
+A Engenharia de Requisitos é a área da Engenharia de Software responsável por
+identificar, analisar, documentar e validar as necessidades que um sistema deve atender.
+Ela é considerada uma das fases mais críticas do desenvolvimento de software,
+pois erros nessa etapa geram retrabalho, aumento de custos e falhas no produto final.
+</p>
+
+<p>
+Estudos mostram que a maioria dos problemas em sistemas ocorre devido
+a requisitos mal definidos ou mal compreendidos.
+Por isso, essa etapa exige comunicação eficiente entre clientes, usuários e equipe técnica.
+</p>
+
+<h3>O que é um Requisito</h3>
+<p>
+Um requisito é uma condição, capacidade ou funcionalidade necessária para
+que o sistema satisfaça uma necessidade do usuário ou do negócio.
+Ele deve ser claro, específico, verificável e consistente.
+</p>
+
+<p>
+Requisitos mal escritos podem gerar ambiguidades, interpretações diferentes
+e conflitos durante o desenvolvimento.
+</p>
+
+<h3>Classificação dos Requisitos</h3>
+
+<h4>Requisitos Funcionais</h4>
+<p>
+Descrevem comportamentos e funcionalidades específicas do sistema.
+Exemplo: “O sistema deve permitir cadastro de usuários”.
+Eles definem o que o sistema deve fazer.
+</p>
+
+<h4>Requisitos Não Funcionais</h4>
+<p>
+Definem critérios de qualidade e restrições do sistema.
+Estão relacionados a desempenho, segurança, confiabilidade, usabilidade,
+manutenibilidade e portabilidade.
+Exemplo: “O sistema deve responder em até 2 segundos”.
+</p>
+
+<h4>Requisitos de Domínio</h4>
+<p>
+São requisitos específicos da área de aplicação do sistema.
+Eles refletem regras de negócio, leis ou normas específicas do setor.
+</p>
+
+<h3>Processo da Engenharia de Requisitos</h3>
+
+<ol>
+<li><b>Concepção:</b> entendimento inicial do problema e definição de objetivos.</li>
+<li><b>Levantamento:</b> coleta de requisitos por meio de entrevistas, questionários, observação e workshops.</li>
+<li><b>Elaboração:</b> organização e modelagem dos requisitos coletados.</li>
+<li><b>Negociação:</b> resolução de conflitos entre requisitos e priorização.</li>
+<li><b>Especificação:</b> documentação formal dos requisitos.</li>
+<li><b>Validação:</b> verificação se os requisitos atendem às necessidades reais.</li>
+<li><b>Gerenciamento:</b> controle de mudanças ao longo do ciclo de vida do projeto.</li>
+</ol>
+
+<h3>Técnicas de Levantamento de Requisitos</h3>
+<ul>
+<li><b>Entrevistas:</b> conversas estruturadas com stakeholders.</li>
+<li><b>Questionários:</b> coleta de informações padronizadas.</li>
+<li><b>Observação:</b> análise do ambiente real de trabalho.</li>
+<li><b>Etnografia:</b> estudo profundo do contexto organizacional.</li>
+<li><b>Brainstorming:</b> geração colaborativa de ideias.</li>
+<li><b>Prototipação:</b> criação de modelos preliminares do sistema.</li>
+</ul>
+
+<h3>Stakeholders</h3>
+<p>
+São todas as partes interessadas no sistema, incluindo usuários finais,
+clientes, desenvolvedores, gerentes e patrocinadores.
+Cada stakeholder pode ter expectativas e prioridades diferentes,
+o que torna a negociação essencial.
+</p>
+
+<h3>Qualidade dos Requisitos</h3>
+<p>
+Para que um requisito seja considerado de qualidade, ele deve ser:
+</p>
+<ul>
+<li>Claro e sem ambiguidades</li>
+<li>Completo</li>
+<li>Consistente</li>
+<li>Verificável</li>
+<li>Rastreável</li>
+<li>Viável tecnicamente</li>
+</ul>
+
+<h3>Validação de Requisitos</h3>
+<p>
+A validação verifica se os requisitos representam corretamente as necessidades do usuário.
+Ela pode envolver revisões, inspeções, protótipos e testes.
+O objetivo é reduzir riscos antes do início da implementação.
+</p>
+
+<h3>Rastreabilidade</h3>
+<p>
+A rastreabilidade permite acompanhar a origem de cada requisito
+e analisar o impacto de alterações.
+Ela ajuda a manter controle, qualidade e alinhamento com os objetivos do projeto.
+</p>
+
+<h3>Problemas Comuns na Engenharia de Requisitos</h3>
+<ul>
+<li>Falta de comunicação entre equipe e cliente</li>
+<li>Requisitos ambíguos ou incompletos</li>
+<li>Mudanças constantes sem controle</li>
+<li>Expectativas irreais dos stakeholders</li>
+</ul>
+
+<p>
+Uma Engenharia de Requisitos bem conduzida reduz custos,
+melhora a qualidade do software e aumenta a satisfação do cliente.
+</p>
+
+</div>
+
+<!-- ================= MODULO 3 ================= -->
+<button class="section-btn" onclick="toggle('m3')">
+📘 Módulo 3 — UML (Unified Modeling Language)
+</button>
+<div id="m3" class="content">
+<h2>Módulo 3 — UML (Unified Modeling Language)</h2>
+
+<p>
+A UML (Unified Modeling Language) é uma linguagem padronizada utilizada para modelar sistemas de software.
+Ela permite representar visualmente a estrutura e o comportamento de um sistema antes de sua implementação.
+A modelagem ajuda desenvolvedores, analistas e gestores a compreender melhor como um sistema será construído,
+facilitando a comunicação entre os membros da equipe e reduzindo erros durante o desenvolvimento.
+</p>
+
+<p>
+A UML surgiu na década de 1990 a partir da unificação de diversas técnicas de modelagem orientadas a objetos.
+Ela foi criada por Grady Booch, James Rumbaugh e Ivar Jacobson, três importantes pesquisadores da área
+de engenharia de software. Com o tempo, a UML se tornou um padrão internacional para modelagem de sistemas,
+sendo amplamente utilizada em projetos de software de diferentes tamanhos e complexidades.
+</p>
+
+<p>
+A modelagem com UML é baseada no paradigma da orientação a objetos. Nesse paradigma, o sistema é representado
+por objetos que interagem entre si. Cada objeto possui atributos, que representam suas características,
+e métodos, que representam suas ações ou comportamentos. Essa abordagem permite organizar melhor o código,
+facilitar a manutenção e promover reutilização de componentes.
+</p>
+
+<h3>Principais Objetivos da UML</h3>
+
+<p>
+A UML possui vários objetivos importantes no desenvolvimento de software. O primeiro deles é permitir
+uma representação visual clara do sistema. Através dos diagramas, é possível entender a estrutura do sistema
+sem precisar analisar diretamente o código fonte.
+</p>
+
+<p>
+Outro objetivo é melhorar a comunicação entre os membros da equipe de desenvolvimento.
+Os diagramas UML funcionam como uma linguagem comum entre analistas, programadores e clientes.
+Isso facilita o entendimento dos requisitos e reduz ambiguidades no projeto.
+</p>
+
+<p>
+Além disso, a UML ajuda no planejamento e documentação do sistema.
+Ao criar diagramas antes da implementação, os desenvolvedores conseguem prever problemas de arquitetura
+e tomar decisões mais adequadas sobre o design do software.
+</p>
+
+<h3>Tipos de Diagramas da UML</h3>
+
+<p>
+A UML possui vários tipos de diagramas que podem ser utilizados para representar diferentes aspectos
+de um sistema. Esses diagramas são geralmente divididos em dois grandes grupos:
+diagramas estruturais e diagramas comportamentais.
+</p>
+
+<p>
+Os diagramas estruturais representam a organização e estrutura do sistema.
+Já os diagramas comportamentais mostram como o sistema funciona ao longo do tempo
+e como os diferentes componentes interagem entre si.
+</p>
+
+<h3>Diagrama de Classes</h3>
+
+<p>
+O diagrama de classes é um dos diagramas mais importantes da UML.
+Ele representa a estrutura estática do sistema, mostrando as classes,
+seus atributos, métodos e relacionamentos.
+</p>
+
+<p>
+Cada classe representa um modelo de objeto dentro do sistema.
+Por exemplo, em um sistema de biblioteca podem existir classes como
+Livro, Usuário e Empréstimo.
+</p>
+
+<p>
+Os relacionamentos entre classes podem representar associações,
+herança, agregação ou composição.
+Esses relacionamentos ajudam a definir como os objetos interagem entre si.
+</p>
+
+<h3>Diagrama de Casos de Uso</h3>
+
+<p>
+O diagrama de casos de uso descreve as funcionalidades do sistema
+do ponto de vista do usuário.
+Ele mostra quais ações os usuários podem realizar dentro do sistema.
+</p>
+
+<p>
+Nesse diagrama aparecem dois elementos principais:
+os atores e os casos de uso.
+Os atores representam usuários ou sistemas externos,
+enquanto os casos de uso representam funcionalidades do sistema.
+</p>
+
+<p>
+Esse diagrama é muito importante na fase de levantamento de requisitos,
+pois ajuda a identificar quais funcionalidades devem ser implementadas.
+</p>
+
+<h3>Diagrama de Sequência</h3>
+
+<p>
+O diagrama de sequência mostra a interação entre objetos ao longo do tempo.
+Ele representa a ordem em que mensagens são trocadas entre os componentes do sistema.
+</p>
+
+<p>
+Esse tipo de diagrama é útil para entender como as operações são executadas
+e como diferentes partes do sistema colaboram para realizar uma tarefa específica.
+</p>
+
+<h3>Diagrama de Atividades</h3>
+
+<p>
+O diagrama de atividades representa o fluxo de atividades dentro de um processo.
+Ele é semelhante a um fluxograma e mostra a sequência de ações necessárias
+para completar uma determinada tarefa.
+</p>
+
+<p>
+Esse tipo de diagrama é muito utilizado para representar processos de negócio
+e fluxos de trabalho dentro de sistemas de informação.
+</p>
+
+<h3>Importância da UML na Engenharia de Software</h3>
+
+<p>
+A utilização da UML traz diversas vantagens para o desenvolvimento de software.
+Ela ajuda a organizar melhor as ideias do projeto,
+facilita o planejamento da arquitetura do sistema
+e melhora a documentação do software.
+</p>
+
+<p>
+Além disso, os diagramas UML tornam o sistema mais fácil de compreender
+para novos desenvolvedores que venham trabalhar no projeto futuramente.
+</p>
+
+<p>
+Por essas razões, a UML é considerada uma ferramenta essencial
+na engenharia de software moderna.
+</p>
+</div>
+
+<!-- ================= MODULO 4 ================= -->
+<button class="section-btn" onclick="toggle('m4')">
+📘 Módulo 4 —Processos de Desenvolvimento de Software
+</button>
+<div id="m4" class="content">
+<h2>Módulo 4 — Processos de Desenvolvimento de Software</h2>
+
+<p>
+O processo de desenvolvimento de software é um conjunto organizado de atividades
+utilizadas para criar, testar, implantar e manter sistemas computacionais.
+Esse processo define uma sequência de etapas que ajudam as equipes de desenvolvimento
+a produzir software com qualidade, dentro do prazo e com controle de custos.
+</p>
+
+<p>
+Na engenharia de software, seguir um processo estruturado é extremamente importante.
+Sem um processo bem definido, o desenvolvimento pode se tornar desorganizado,
+gerando erros, atrasos e dificuldades na manutenção do sistema.
+Por isso, os processos de software foram criados para orientar equipes
+na construção de sistemas complexos.
+</p>
+
+<p>
+Um processo de software geralmente envolve várias atividades principais,
+como comunicação com o cliente, planejamento do projeto, modelagem do sistema,
+implementação do código e testes.
+Essas atividades permitem que o sistema seja desenvolvido de maneira organizada
+e progressiva.
+</p>
+
+<h3>Etapas do Processo de Desenvolvimento</h3>
+
+<p>
+O processo de desenvolvimento de software pode ser dividido em diversas etapas.
+Cada etapa possui objetivos específicos e contribui para o sucesso do projeto.
+</p>
+
+<p>
+A primeira etapa é a <strong>comunicação</strong>.
+Nessa fase, os desenvolvedores conversam com clientes e usuários
+para entender quais são as necessidades do sistema.
+Essa etapa está diretamente ligada à engenharia de requisitos,
+pois é nela que são identificadas as funcionalidades do software.
+</p>
+
+<p>
+A segunda etapa é o <strong>planejamento</strong>.
+Durante o planejamento, são definidos prazos, recursos, custos
+e estratégias de desenvolvimento.
+Essa fase também envolve a definição das tarefas da equipe
+e a organização do cronograma do projeto.
+</p>
+
+<p>
+A terceira etapa é a <strong>modelagem</strong>.
+Nessa fase, o sistema é representado por modelos e diagramas,
+muitas vezes utilizando UML.
+A modelagem permite compreender melhor a estrutura do sistema
+antes da implementação do código.
+</p>
+
+<p>
+A quarta etapa é a <strong>construção</strong>.
+Aqui ocorre o desenvolvimento do software propriamente dito.
+Os programadores escrevem o código, implementam funcionalidades
+e realizam testes para garantir que o sistema funcione corretamente.
+</p>
+
+<p>
+A última etapa é a <strong>entrega e manutenção</strong>.
+Após o desenvolvimento, o sistema é disponibilizado para os usuários.
+Mesmo depois da entrega, o software continua sendo atualizado
+para corrigir erros, melhorar funcionalidades e adaptar-se
+a novas necessidades.
+</p>
+
+<h3>Modelos de Processo de Software</h3>
+
+<p>
+Existem diferentes modelos de processo que podem ser utilizados
+no desenvolvimento de software.
+Cada modelo organiza as etapas do projeto de maneira diferente.
+</p>
+
+<p>
+Um dos modelos mais conhecidos é o <strong>modelo cascata</strong>.
+Nesse modelo, as etapas do desenvolvimento são realizadas
+de forma sequencial.
+Ou seja, uma fase só começa quando a anterior é concluída.
+Esse modelo é simples de entender, mas pode ser rígido
+quando mudanças são necessárias.
+</p>
+
+<p>
+Outro modelo bastante utilizado é o <strong>modelo incremental</strong>.
+Nesse modelo, o sistema é desenvolvido em partes chamadas incrementos.
+Cada incremento adiciona novas funcionalidades ao sistema,
+permitindo entregas parciais ao longo do projeto.
+</p>
+
+<p>
+O <strong>modelo ágil</strong> também se tornou muito popular
+nos últimos anos.
+As metodologias ágeis, como Scrum e Kanban,
+focam em ciclos curtos de desenvolvimento chamados iterações.
+Esses ciclos permitem adaptações rápidas
+quando surgem mudanças nos requisitos do projeto.
+</p>
+
+<h3>Importância dos Processos de Software</h3>
+
+<p>
+Os processos de software ajudam as equipes a manter organização
+durante o desenvolvimento.
+Eles também facilitam o controle do progresso do projeto
+e permitem identificar problemas antes que eles se tornem críticos.
+</p>
+
+<p>
+Outro benefício importante é a melhoria da qualidade do software.
+Ao seguir etapas bem definidas e realizar testes sistemáticos,
+é possível reduzir falhas e aumentar a confiabilidade do sistema.
+</p>
+
+<p>
+Além disso, os processos de software tornam os projetos mais previsíveis.
+Com planejamento e controle adequados,
+é possível estimar prazos e custos com maior precisão.
+</p>
+
+<p>
+Por essas razões, os processos de desenvolvimento são considerados
+um dos pilares fundamentais da engenharia de software moderna.
+Eles ajudam a garantir que sistemas complexos sejam desenvolvidos
+de forma organizada, eficiente e alinhada às necessidades dos usuários.
+</p>
+</div>
+
+
+<!-- ================= FLASHCARDS ================= -->
+
+
+<button class="section-btn" onclick="toggle('flash')">
+🎴 Flashcards Engenharia de Software
+</button>
+
+<div id="flash" class="content">
+
+<div>
+<button onclick="embaralhar()">🔀 Embaralhar</button>
+<button onclick="resetar()">🔄 Resetar estudo</button>
+
+<p>
+Progresso: <span id="acertos">0</span>/<span id="total"></span>
+</p>
+</div>
+
+<!-- ================= MODULO 1 ================= -->
+
+<h3>📘 Flashcards — Engenharia de Software</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">O que é Engenharia de Software?</div>
+<div class="card-face card-back">Aplicação de métodos para desenvolver software de qualidade.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Objetivo da Engenharia</div>
+<div class="card-face card-back">Produzir software confiável dentro do prazo e custo.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">O que é software?</div>
+<div class="card-face card-back">Conjunto de programas que executam tarefas no computador.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Ciclo de vida do software</div>
+<div class="card-face card-back">Etapas desde criação até manutenção.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Qualidade de software</div>
+<div class="card-face card-back">Capacidade de atender requisitos e satisfazer usuários.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Stakeholders</div>
+<div class="card-face card-back">Pessoas interessadas no sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Crise do software</div>
+<div class="card-face card-back">Dificuldade histórica de desenvolver sistemas complexos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Documentação</div>
+<div class="card-face card-back">Registro das informações do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Manutenção</div>
+<div class="card-face card-back">Correção e atualização após entrega.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Importância da engenharia</div>
+<div class="card-face card-back">Organizar desenvolvimento de sistemas complexos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+<!-- ================= MODULO 2 ================= -->
+
+<h3>📗 Flashcards — Engenharia de Requisitos</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Engenharia de Requisitos</div>
+<div class="card-face card-back">Processo de identificar necessidades do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Requisito</div>
+<div class="card-face card-back">Funcionalidade ou condição do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Requisito funcional</div>
+<div class="card-face card-back">Define funções do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Requisito não funcional</div>
+<div class="card-face card-back">Define qualidade e desempenho.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Levantamento</div>
+<div class="card-face card-back">Coleta de requisitos do usuário.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Validação</div>
+<div class="card-face card-back">Verificar se requisitos estão corretos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Rastreabilidade</div>
+<div class="card-face card-back">Acompanhar origem e mudanças.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Stakeholder</div>
+<div class="card-face card-back">Parte interessada no sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Especificação</div>
+<div class="card-face card-back">Documento com requisitos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Gerenciamento</div>
+<div class="card-face card-back">Controle de mudanças dos requisitos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+<!-- ================= MODULO 3 ================= -->
+
+<h3>📙 Flashcards — UML</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">UML</div>
+<div class="card-face card-back">Linguagem de modelagem de sistemas.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Modelagem</div>
+<div class="card-face card-back">Representação visual do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Diagrama de classes</div>
+<div class="card-face card-back">Estrutura das classes do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Casos de uso</div>
+<div class="card-face card-back">Interação entre usuário e sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Sequência</div>
+<div class="card-face card-back">Ordem de mensagens entre objetos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Atividades</div>
+<div class="card-face card-back">Fluxo de processos do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Classe</div>
+<div class="card-face card-back">Modelo de objeto.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Objeto</div>
+<div class="card-face card-back">Instância de uma classe.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Atributo</div>
+<div class="card-face card-back">Característica da classe.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Método</div>
+<div class="card-face card-back">Função da classe.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+<!-- ================= MODULO 4 ================= -->
+
+<h3>📕 Flashcards — Processos de Software</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Processo de software</div>
+<div class="card-face card-back">Etapas para desenvolver sistemas.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Comunicação</div>
+<div class="card-face card-back">Entender necessidades do cliente.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Planejamento</div>
+<div class="card-face card-back">Definir cronograma e recursos.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Modelagem</div>
+<div class="card-face card-back">Criar modelos do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Construção</div>
+<div class="card-face card-back">Programação do sistema.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Entrega</div>
+<div class="card-face card-back">Disponibilizar para usuários.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Modelo cascata</div>
+<div class="card-face card-back">Desenvolvimento sequencial.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Modelo incremental</div>
+<div class="card-face card-back">Sistema criado em partes.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Metodologias ágeis</div>
+<div class="card-face card-back">Desenvolvimento flexível.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+<div class="card-inner">
+<div class="card-face card-front">Scrum</div>
+<div class="card-face card-back">Framework ágil popular.<br><br><button onclick="marcar(event,this)">✔ Aprendi</button></div>
+</div>
+</div>
+
+</div>
+
+</div>
+<script>
+  
+
+let aprendidos = 0;
+
+/* abre e fecha seções */
+
+function toggle(id){
+
+const el = document.getElementById(id)
+
+if(!el) return
+
+const isHidden = window.getComputedStyle(el).display === "none"
+
+el.style.display = isHidden ? "block" : "none"
+
+}
+
+/* vira o flashcard */
+
+function flip(el){
+el.classList.toggle("flip")
+}
+
+/* contador de cards */
+
+function iniciarContador(){
+const total = document.querySelectorAll(".flashcard").length;
+document.getElementById("total").innerText = total;
+}
+
+/* marcar aprendido */
+
+function marcar(e,btn){
+
+e.stopPropagation();
+
+const card = btn.closest(".flashcard");
+
+if(!card.classList.contains("aprendido")){
+card.classList.add("aprendido");
+
+aprendidos++;
+
+document.getElementById("acertos").innerText = aprendidos;
+
+card.style.opacity = "0.4";
+}
+
+}
+
+/* resetar estudo */
+
+function resetar(){
+
+aprendidos = 0;
+
+document.getElementById("acertos").innerText = 0;
+
+document.querySelectorAll(".flashcard").forEach(c=>{
+c.classList.remove("aprendido");
+c.style.opacity = "1";
+})
+
+}
+
+/* embaralhar */
+
+function embaralhar(){
+
+document.querySelectorAll(".flash-grid").forEach(grid=>{
+
+let cards = Array.from(grid.children);
+
+cards.sort(()=>Math.random() - 0.5);
+
+cards.forEach(c => grid.appendChild(c));
+
+});
+
+}
+
+window.onload = iniciarContador;
+
+</script>
