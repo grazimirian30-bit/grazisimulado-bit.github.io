@@ -1,0 +1,229 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Módulo 3 - Cidadania</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f3f5fb;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+}
+
+.questao{
+margin-bottom:25px;
+padding:15px;
+background:#fafafa;
+border-left:6px solid #5b7cff;
+}
+
+button{
+padding:12px 20px;
+background:#5b7cff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#3d5ee2;
+}
+
+.resultado{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+.gabarito{
+margin-top:20px;
+background:#eef2ff;
+padding:15px;
+border-radius:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Módulo 3 – Cidadania e Ética Social</h1>
+
+<form id="quiz">
+
+<div class="questao">
+<p><b>1. O conceito contemporâneo de cidadania envolve:</b></p>
+
+<label><input type="radio" name="q1" value="a"> participação ativa na vida social e política</label><br>
+<label><input type="radio" name="q1" value="b"> apenas direito ao voto</label><br>
+<label><input type="radio" name="q1" value="c"> submissão às autoridades</label><br>
+<label><input type="radio" name="q1" value="d"> neutralidade política</label>
+</div>
+
+<div class="questao">
+<p><b>2. A cidadania pode ser fortalecida quando:</b></p>
+
+<label><input type="radio" name="q2" value="a"> há concentração de poder</label><br>
+<label><input type="radio" name="q2" value="b"> direitos civis são limitados</label><br>
+<label><input type="radio" name="q2" value="c"> a população participa das decisões públicas</label><br>
+<label><input type="radio" name="q2" value="d"> apenas elites tomam decisões</label>
+</div>
+
+<div class="questao">
+<p><b>3. Uma sociedade democrática depende:</b></p>
+
+<label><input type="radio" name="q3" value="a"> da exclusão social</label><br>
+<label><input type="radio" name="q3" value="b"> da igualdade de direitos entre cidadãos</label><br>
+<label><input type="radio" name="q3" value="c"> da concentração de riqueza</label><br>
+<label><input type="radio" name="q3" value="d"> da ausência de participação política</label>
+</div>
+
+<div class="questao">
+<p><b>4. A cidadania digital refere-se:</b></p>
+
+<label><input type="radio" name="q4" value="a"> ao uso irrestrito da internet</label><br>
+<label><input type="radio" name="q4" value="b"> à substituição das relações sociais</label><br>
+<label><input type="radio" name="q4" value="c"> à participação responsável em ambientes digitais</label><br>
+<label><input type="radio" name="q4" value="d"> ao controle absoluto das redes sociais</label>
+</div>
+
+<div class="questao">
+<p><b>5. A ética profissional exige:</b></p>
+
+<label><input type="radio" name="q5" value="a"> vantagem pessoal acima de tudo</label><br>
+<label><input type="radio" name="q5" value="b"> competitividade extrema</label><br>
+<label><input type="radio" name="q5" value="c"> neutralidade social</label><br>
+<label><input type="radio" name="q5" value="d"> responsabilidade social nas ações</label>
+</div>
+
+<div class="questao">
+<p><b>6. O exercício da cidadania contribui para:</b></p>
+
+<label><input type="radio" name="q6" value="a"> fortalecimento da democracia</label><br>
+<label><input type="radio" name="q6" value="b"> aumento da desigualdade</label><br>
+<label><input type="radio" name="q6" value="c"> redução da participação política</label><br>
+<label><input type="radio" name="q6" value="d"> exclusão social</label>
+</div>
+
+<div class="questao">
+<p><b>7. O conceito de cidadania evoluiu ao longo do tempo porque:</b></p>
+
+<label><input type="radio" name="q7" value="a"> as leis naturais mudam</label><br>
+<label><input type="radio" name="q7" value="b"> governos eliminam direitos</label><br>
+<label><input type="radio" name="q7" value="c"> valores sociais e direitos foram ampliados</label><br>
+<label><input type="radio" name="q7" value="d"> culturas deixam de existir</label>
+</div>
+
+<div class="questao">
+<p><b>8. Uma sociedade cidadã valoriza:</b></p>
+
+<label><input type="radio" name="q8" value="a"> exclusão social</label><br>
+<label><input type="radio" name="q8" value="b"> privilégio econômico</label><br>
+<label><input type="radio" name="q8" value="c"> respeito às diferenças</label><br>
+<label><input type="radio" name="q8" value="d"> autoritarismo</label>
+</div>
+
+<div class="questao">
+<p><b>9. A responsabilidade social das empresas significa:</b></p>
+
+<label><input type="radio" name="q9" value="a"> atuar apenas visando lucro</label><br>
+<label><input type="radio" name="q9" value="b"> contribuir para o bem-estar coletivo</label><br>
+<label><input type="radio" name="q9" value="c"> evitar participação social</label><br>
+<label><input type="radio" name="q9" value="d"> controlar consumidores</label>
+</div>
+
+<div class="questao">
+<p><b>10. A ética nas relações sociais contribui para:</b></p>
+
+<label><input type="radio" name="q10" value="a"> concentração de poder</label><br>
+<label><input type="radio" name="q10" value="b"> desigualdade social</label><br>
+<label><input type="radio" name="q10" value="c"> conflitos permanentes</label><br>
+<label><input type="radio" name="q10" value="d"> relações baseadas em confiança e justiça</label>
+</div>
+
+<button type="button" onclick="corrigir()">Corrigir Simulado</button>
+
+</form>
+
+<div id="resultado" class="resultado"></div>
+<div id="gabarito" class="gabarito"></div>
+
+</div>
+
+<script>
+
+function corrigir(){
+
+let respostas={
+q1:"a",
+q2:"c",
+q3:"b",
+q4:"c",
+q5:"d",
+q6:"a",
+q7:"c",
+q8:"c",
+q9:"b",
+q10:"d"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let marcada=document.querySelector('input[name="'+q+'"]:checked');
+
+if(marcada && marcada.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML="Pontuação: "+pontos+" / 10";
+
+document.getElementById("gabarito").innerHTML=
+
+"<h3>Gabarito Comentado</h3>"+
+"1-A: cidadania envolve participação social.<br>"+
+"2-C: participação popular fortalece cidadania.<br>"+
+"3-B: democracia depende de igualdade de direitos.<br>"+
+"4-C: cidadania digital exige responsabilidade online.<br>"+
+"5-D: ética profissional exige responsabilidade social.<br>"+
+"6-A: cidadania fortalece democracia.<br>"+
+"7-C: cidadania evolui com ampliação de direitos.<br>"+
+"8-C: sociedade cidadã respeita diversidade.<br>"+
+"9-B: empresas devem contribuir socialmente.<br>"+
+"10-D: ética promove confiança e justiça.";
+
+}
+
+</script>
+
+</body>
+</html>

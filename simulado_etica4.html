@@ -1,0 +1,230 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Módulo 4 - Diversidade e Desigualdade</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6fb;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+color:#333;
+}
+
+.questao{
+margin-bottom:25px;
+padding:15px;
+background:#fafafa;
+border-left:6px solid #3a7bd5;
+}
+
+button{
+padding:12px 20px;
+background:#3a7bd5;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#2b5fb0;
+}
+
+.resultado{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+.gabarito{
+margin-top:20px;
+background:#eef3ff;
+padding:15px;
+border-radius:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Módulo 4 – Diversidade e Desigualdade</h1>
+
+<form id="quiz">
+
+<div class="questao">
+<p><b>1. No contexto social, diversidade refere-se principalmente:</b></p>
+
+<label><input type="radio" name="q1" value="a"> à existência de diferentes culturas, identidades e modos de vida</label><br>
+<label><input type="radio" name="q1" value="b"> à eliminação de conflitos sociais</label><br>
+<label><input type="radio" name="q1" value="c"> à padronização cultural das sociedades</label><br>
+<label><input type="radio" name="q1" value="d"> à substituição de valores tradicionais</label>
+</div>
+
+<div class="questao">
+<p><b>2. A desigualdade social pode ser compreendida como:</b></p>
+
+<label><input type="radio" name="q2" value="a"> resultado natural das diferenças humanas</label><br>
+<label><input type="radio" name="q2" value="b"> distribuição injusta de recursos e oportunidades</label><br>
+<label><input type="radio" name="q2" value="c"> consequência da diversidade cultural</label><br>
+<label><input type="radio" name="q2" value="d"> forma de organização econômica equilibrada</label>
+</div>
+
+<div class="questao">
+<p><b>3. A ética aplicada ao ambiente de trabalho exige:</b></p>
+
+<label><input type="radio" name="q3" value="a"> competitividade ilimitada entre profissionais</label><br>
+<label><input type="radio" name="q3" value="b"> respeito às diferenças e justiça nas relações</label><br>
+<label><input type="radio" name="q3" value="c"> neutralidade moral nas decisões</label><br>
+<label><input type="radio" name="q3" value="d"> priorização exclusiva de resultados financeiros</label>
+</div>
+
+<div class="questao">
+<p><b>4. A discriminação ocorre quando:</b></p>
+
+<label><input type="radio" name="q4" value="a"> grupos sociais recebem tratamento desigual baseado em preconceitos</label><br>
+<label><input type="radio" name="q4" value="b"> existe pluralidade cultural</label><br>
+<label><input type="radio" name="q4" value="c"> diferentes identidades convivem na sociedade</label><br>
+<label><input type="radio" name="q4" value="d"> há liberdade de expressão</label>
+</div>
+
+<div class="questao">
+<p><b>5. O princípio da igualdade no trabalho significa:</b></p>
+
+<label><input type="radio" name="q5" value="a"> eliminar qualquer tipo de diferença entre indivíduos</label><br>
+<label><input type="radio" name="q5" value="b"> garantir oportunidades justas independentemente de gênero, raça ou origem</label><br>
+<label><input type="radio" name="q5" value="c"> estabelecer padrões culturais únicos</label><br>
+<label><input type="radio" name="q5" value="d"> priorizar produtividade acima de valores sociais</label>
+</div>
+
+<div class="questao">
+<p><b>6. A inclusão social nas organizações busca:</b></p>
+
+<label><input type="radio" name="q6" value="a"> reduzir a diversidade no ambiente profissional</label><br>
+<label><input type="radio" name="q6" value="b"> integrar diferentes grupos garantindo participação e respeito</label><br>
+<label><input type="radio" name="q6" value="c"> padronizar comportamentos culturais</label><br>
+<label><input type="radio" name="q6" value="d"> restringir acesso ao mercado de trabalho</label>
+</div>
+
+<div class="questao">
+<p><b>7. O respeito à diversidade contribui para:</b></p>
+
+<label><input type="radio" name="q7" value="a"> fortalecimento da convivência democrática</label><br>
+<label><input type="radio" name="q7" value="b"> aumento da desigualdade econômica</label><br>
+<label><input type="radio" name="q7" value="c"> redução das liberdades individuais</label><br>
+<label><input type="radio" name="q7" value="d"> uniformização cultural</label>
+</div>
+
+<div class="questao">
+<p><b>8. A igualdade de gênero no ambiente profissional implica:</b></p>
+
+<label><input type="radio" name="q8" value="a"> divisão rígida de funções entre homens e mulheres</label><br>
+<label><input type="radio" name="q8" value="b"> acesso equitativo a oportunidades e direitos</label><br>
+<label><input type="radio" name="q8" value="c"> exclusão de diferenças culturais</label><br>
+<label><input type="radio" name="q8" value="d"> substituição de políticas sociais por competitividade</label>
+</div>
+
+<div class="questao">
+<p><b>9. Uma sociedade ética e democrática deve:</b></p>
+
+<label><input type="radio" name="q9" value="a"> valorizar apenas resultados econômicos</label><br>
+<label><input type="radio" name="q9" value="b"> promover igualdade, justiça e respeito às diferenças</label><br>
+<label><input type="radio" name="q9" value="c"> priorizar hierarquias sociais rígidas</label><br>
+<label><input type="radio" name="q9" value="d"> limitar participação social</label>
+</div>
+
+<div class="questao">
+<p><b>10. A promoção da diversidade no trabalho está associada a:</b></p>
+
+<label><input type="radio" name="q10" value="a"> valorização de múltiplas perspectivas e experiências</label><br>
+<label><input type="radio" name="q10" value="b"> homogeneização cultural</label><br>
+<label><input type="radio" name="q10" value="c"> exclusão de minorias</label><br>
+<label><input type="radio" name="q10" value="d"> eliminação de identidades sociais</label>
+</div>
+
+<button type="button" onclick="corrigir()">Corrigir Simulado</button>
+
+</form>
+
+<div id="resultado" class="resultado"></div>
+<div id="gabarito" class="gabarito"></div>
+
+</div>
+
+<script>
+
+function corrigir(){
+
+let respostas={
+q1:"a",
+q2:"b",
+q3:"b",
+q4:"a",
+q5:"b",
+q6:"b",
+q7:"a",
+q8:"b",
+q9:"b",
+q10:"a"
+};
+
+let pontos=0;
+
+for(let q in respostas){
+
+let marcada=document.querySelector('input[name="'+q+'"]:checked');
+
+if(marcada && marcada.value===respostas[q]){
+pontos++;
+}
+
+}
+
+document.getElementById("resultado").innerHTML="Pontuação: "+pontos+" / 10";
+
+document.getElementById("gabarito").innerHTML=
+
+"<h3>Gabarito Comentado</h3>"+
+"1-A: diversidade refere-se às múltiplas identidades e culturas.<br>"+
+"2-B: desigualdade envolve distribuição injusta de recursos.<br>"+
+"3-B: ética profissional envolve respeito e justiça.<br>"+
+"4-A: discriminação ocorre quando há tratamento desigual baseado em preconceitos.<br>"+
+"5-B: igualdade implica oportunidades justas.<br>"+
+"6-B: inclusão social busca integrar diferentes grupos.<br>"+
+"7-A: diversidade fortalece democracia.<br>"+
+"8-B: igualdade de gênero garante acesso igual a oportunidades.<br>"+
+"9-B: sociedade ética promove justiça e respeito.<br>"+
+"10-A: diversidade valoriza múltiplas perspectivas.";
+
+}
+
+</script>
+
+</body>
+</html>
